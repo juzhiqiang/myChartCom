@@ -1,8 +1,5 @@
-module.export = {
-  // 指定测试文件夹
-  testMatch: ["**/__tests__/**/*.spec.js"],
-  //   指定测hi允许方案
-  runner: "jest-electron/runner",
-  // 指定测试环境
-  testEnvironment: "jest-electron/environment",
+module.exports = {
+  testMatch: ["**/__tests__/**/*.spec.js"], // 只测试后缀为 .spec.js 的文件
+  runner: "jest-electron/runner", // 指定测试的 runner
+  testEnvironment: "jest-electron/environment", //  制定测试的环境
 };

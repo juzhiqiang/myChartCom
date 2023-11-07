@@ -24,7 +24,9 @@ module.exports = {
   },
   rules: {
     quotes: ["error", "double"],
+    "linebreak-style": ["off"],
     // 设置需要隐藏的规则
     "import/prefer-default-export": 0,
   },
+  ignorePatterns: ["commitlint.config.js"],
 };
