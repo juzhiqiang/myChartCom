@@ -4,15 +4,35 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "rimraf -rf ./dist ./lib ./esm && rollup --config --bundleConfigAsCjs",
     "lint": "eslint --fix",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint-staged": "eslint --fix",
+    "test": "jest --coverage",
+    "test-live": "core-env DEBUG_MODE=1 jest --coverage",
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/cli": "^7.23.0",
+    "@babel/core": "^7.23.2",
+    "@babel/preset-env": "^7.23.2",
+    "@commitlint/cli": "^18.2.0",
+    "@commitlint/config-conventional": "^18.1.0",
+    "cross-env": "^7.0.3",
     "eslint": "^7.32.0 || ^8.2.0",
     "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.29.0"
+    "eslint-plugin-import": "^2.29.0",
+    "husky": "^8.0.0",
+    "jest": "26.0.1",
+    "jest-electron": "^0.1.12",
+    "rimraf": "^5.0.5",
+    "rollup": "^4.3.0",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-node-resolve": "^5.2.0"
+  },
+  "lint-staged": {
+    "*.js": "eslint --cache --fix"
   }
 }
